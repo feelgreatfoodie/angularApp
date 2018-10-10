@@ -13,11 +13,11 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true
   loaded: boolean = false
   enableAdd: boolean = true
+  currentClasses: {}
  
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => {
       this.users = [
         {
           firstName: 'John',
@@ -28,12 +28,14 @@ export class UsersComponent implements OnInit {
             city: 'New York',
             state: 'NY'
           },
-          image: 'http://picsum.photos/200/200/?random'
+          image: 'http://picsum.photos/200/200/?random',
+          isActive: true
         },
         {
           firstName: 'Joe',
           lastName: 'Blake',
-          image: 'http://picsum.photos/g/200/200/?random'
+          image: 'http://picsum.photos/g/200/200/?random',
+          isActive: false
         },
         {
           firstName: 'Juliana',
@@ -44,12 +46,13 @@ export class UsersComponent implements OnInit {
             city: 'San Francisco',
             state: 'CA'
           },
-          image: 'http://picsum.photos/200/200/'
+          image: 'http://picsum.photos/200/200/',
+          isActive: true
         }
       ]
 
       this.loaded = true
-    })
+      this.setCurrentClasses()
     
     // this.showExtended = false
 
@@ -63,10 +66,18 @@ export class UsersComponent implements OnInit {
     //     state: 'CA'
     //   }
     // })
+    
   }
 
   addUser(user: User) {
     this.users.push(user)
+  }
+
+  setCurrentClasses() {
+    this.currentClasses = {
+      'btn-success': this.enableAdd,
+      'big-text': this.showExtended
+    }
   }
 
 }
