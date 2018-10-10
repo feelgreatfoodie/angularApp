@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   users: User[]
   showExtended: boolean = true
   loaded: boolean = false
+  enableAdd: boolean = true
  
   constructor() { }
 
@@ -20,11 +21,19 @@ export class UsersComponent implements OnInit {
       this.users = [
         {
           firstName: 'John',
-          lastName: 'Smith'
+          lastName: 'Smith',
+          age: 29,
+          address: {
+            street: '11503 34th St',
+            city: 'New York',
+            state: 'NY'
+          },
+          image: 'http://picsum.photos/200/200/?random'
         },
         {
           firstName: 'Joe',
-          lastName: 'Blake'
+          lastName: 'Blake',
+          image: 'http://picsum.photos/g/200/200/?random'
         },
         {
           firstName: 'Juliana',
@@ -34,25 +43,26 @@ export class UsersComponent implements OnInit {
             street: '503 Post St',
             city: 'San Francisco',
             state: 'CA'
-          }
-          }
+          },
+          image: 'http://picsum.photos/200/200/'
+        }
       ]
 
       this.loaded = true
-    }, 2000)
+    })
     
     // this.showExtended = false
 
-    this.addUser({
-      firstName: 'Trade',
-      lastName: 'Minister',
-      age: 53,
-      address: {
-        street: '1400 Verdanne',
-        city: 'San Francisco',
-        state: 'CA'
-      }
-    })
+    // this.addUser({
+    //   firstName: 'Trade',
+    //   lastName: 'Minister',
+    //   age: 53,
+    //   address: {
+    //     street: '1400 Verdanne',
+    //     city: 'San Francisco',
+    //     state: 'CA'
+    //   }
+    // })
   }
 
   addUser(user: User) {
