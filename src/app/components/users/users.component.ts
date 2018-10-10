@@ -30,7 +30,9 @@ export class UsersComponent implements OnInit {
             state: 'NY'
           },
           image: 'http://picsum.photos/200/200/?random',
-          isActive: true
+          isActive: true,
+          balance: 100,
+          registered: new Date('01/02/2018 08:30:00')
         },
         {
           firstName: 'Joe',
@@ -48,7 +50,9 @@ export class UsersComponent implements OnInit {
             state: 'CA'
           },
           image: 'http://picsum.photos/200/200/',
-          isActive: true
+          isActive: true,
+          balance: 420,
+          registered: new Date('03/12/2018 16:10:00')
         }
       ]
 
