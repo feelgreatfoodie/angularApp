@@ -1,0 +1,16 @@
+<h2>Add Post</h2>
+<div class="card card-body mb-3">
+  <form action="#">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" #title> 
+    </div>
+    <div class="form-group">
+      <label for="body">Body</label>
+      <input type="text" class="form-control" name="body" #body>
+    </div>
+    <button (click)="addPost(title.value, body.value)" class="btn btn-dark btn-block">Add Post</button>
+  </form>
+</div>
+
+<!-- putting #title and #body along w/ btn click event makes for easy form submittal -->
