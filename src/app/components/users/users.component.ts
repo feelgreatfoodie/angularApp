@@ -12,12 +12,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: '',
     lastName: '',
-    age: null,
-    address: {
-      street: '',
-      city: '',
-      state: ''
-    }
+    email: ''
   }
   
   users: User[]
@@ -33,12 +28,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'John',
           lastName: 'Smith',
-          age: 29,
-          address: {
-            street: '11503 34th St',
-            city: 'New York',
-            state: 'NY'
-          },
+          email: 'john@gnr.de',
           isActive: true,
           registered: new Date('01/02/2018 08:30:00'),
           hide: true
@@ -46,6 +36,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Joe',
           lastName: 'Blake',
+          email: 'waffleJoe@gnr.de'
           isActive: false,
           registered: new Date('11/15/2016'),
           hide: true
@@ -53,12 +44,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Juliana',
           lastName: 'Crane',
-          age: 29,
-          address: {
-            street: '503 Post St',
-            city: 'San Francisco',
-            state: 'CA'
-          },
+          email: 'juliana@theResistance.com',
           isActive: true,
           registered: new Date('03/12/2018 16:10:00'),
           hide: true
@@ -76,27 +62,14 @@ export class UsersComponent implements OnInit {
     this.user = {
       firstName: '',
       lastName: '',
-      age: null,
-      address: {
-        street: '',
-        city: '',
-        state: ''
-      }
+      email: ''
     }
   }
 
-  toggleHide(user) {
-    user.hide = !user.hide
-  }
+  // onSubmit(e) {
+  //   console.log('hola')
+  //   e.preventDefault()
+  // }
 
-  onSubmit(e) {
-    console.log('hola')
-    e.preventDefault()
-  }
-
-  fireEvent(e) {
-    console.log(e.target.value)
-    console.log(e.type)
-  }
 
 }
